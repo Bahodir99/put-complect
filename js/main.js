@@ -53,7 +53,6 @@ elFrom1.addEventListener('submit', (e)=>{
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({})
     })
     .then((res)=> res.json())
     .then((data)=>console.log(data))
@@ -65,33 +64,17 @@ elFrom1.addEventListener('submit', (e)=>{
 
 
 
-fetch('https://63dcabf6367aa5a7a4ffc848.mockapi.io/test')
+const newArr = fetch('https://63dcabf6367aa5a7a4ffc848.mockapi.io/test')
 .then((res)=> res.json())
-.then((data)=>{
+.then((data)=> fullData(data))
 
-    let elLi = document.createElement('li')
-    elLi.innerHTML =`
-    <div class="card">
-    <b>UserId:${data.userId} </b>
-    <b>Title:${data.title} </b>
-    <b>Body: ${data.body}</b>
-    </div>`    
-    elList.appendChild(elLi)
 
-})
+function fullData(data){
+    console.log(data);
+}
 
 
 
-
-const dataBase = data
-
-
-console.log(dataBase);
-
-
-dataBase.forEach((e)=>{
-  
-})
 
 
 
